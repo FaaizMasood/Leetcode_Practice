@@ -1,0 +1,31 @@
+// Time Complexity = On as we traverse over the list
+// Space Complexity = O1 we use constant space to store pointers 
+
+
+class Solution {
+    public ListNode deleteNodes(ListNode head, int m, int n) {
+        ListNode ptr = head;
+        ListNode curr = head;
+        int a;
+        int b;
+        while(curr != null){
+            a = m;
+            b = n;
+            while(curr != null && a != 0){
+                ptr = curr;
+                curr = curr.next;
+                a--;
+            }
+            
+            
+            while(curr != null && b != 0){
+                curr = curr.next;
+                b--;
+            }
+            ptr.next = curr;
+        }
+        
+        return head;
+    }
+}
+
